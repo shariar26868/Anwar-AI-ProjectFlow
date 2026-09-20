@@ -59,7 +59,22 @@ can be tested directly from there.
 The beginner-friendly browser guide with complete request and response examples
 for every endpoint is available in [`API_EXAMPLES.md`](API_EXAMPLES.md).
 
-## 4. Run the prototype journey demo
+## 4. Run with Docker
+
+Make sure `.env` exists in the project root. Then run:
+
+```bash
+docker compose up --build
+```
+
+Open `http://127.0.0.1:8000/docs`. The SQLite database is stored in a Docker
+named volume, so it survives container restarts. Stop the container with:
+
+```bash
+docker compose down
+```
+
+## 5. Run the prototype journey demo
 
 Demonstrates the exact journey required by the assignment end-to-end (project
 creation through closure, including a delayed milestone and a recorded blocker):
@@ -71,7 +86,7 @@ python -m app.seed
 Then inspect the result via `/docs` — check `GET /projects/{id}`,
 `GET /projects/{id}/checklist`, `GET /dashboard/summary`.
 
-## 5. Project structure
+## 6. Project structure
 
 ```
 main.py           - root FastAPI entrypoint
