@@ -1,4 +1,4 @@
-# Anwar AI ProjectFlow — Backend Prototype
+# Anwar AI ProjectFlow - Backend Prototype
 
 AI-focused project governance system backend, built for the Anwar Group candidate assignment.
 FastAPI + SQLAlchemy with Groq-powered status parsing, dashboard narratives, and management queries.
@@ -15,7 +15,7 @@ cp .env.example .env
 Load the `.env` file (e.g. via `python-dotenv` in `main.py`, or export the variables
 in your shell) before running the app.
 
-## 2. Database connection — how it works, and what's best
+## 2. Database connection - how it works, and what's best
 
 **Default: SQLite, zero setup.**
 `app/db.py` reads a `DATABASE_URL` environment variable. If it isn't set, it falls
@@ -25,7 +25,7 @@ back to a local SQLite file:
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./projectflow.db")
 ```
 
-Nothing to install or configure — the first time you run the app, `projectflow.db`
+Nothing to install or configure - the first time you run the app, `projectflow.db`
 is created automatically in the project folder. This is the right choice for this
 prototype: no server to manage, and SQLAlchemy's ORM means switching databases
 later needs zero query-code changes.
@@ -53,7 +53,7 @@ layer, this migration is a config change, not a rewrite.
 uvicorn main:app --reload
 ```
 
-Visit `http://127.0.0.1:8000/docs` for interactive Swagger UI — every endpoint
+Visit `http://127.0.0.1:8000/docs` for interactive Swagger UI - every endpoint
 can be tested directly from there.
 
 The beginner-friendly browser guide with complete request and response examples
@@ -83,7 +83,7 @@ creation through closure, including a delayed milestone and a recorded blocker):
 python -m app.seed
 ```
 
-Then inspect the result via `/docs` — check `GET /projects/{id}`,
+Then inspect the result via `/docs` - check `GET /projects/{id}`,
 `GET /projects/{id}/checklist`, `GET /dashboard/summary`.
 
 ## 6. Project structure
