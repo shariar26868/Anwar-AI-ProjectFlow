@@ -38,7 +38,7 @@ later needs zero query-code changes.
    DATABASE_URL=postgresql://<user>:<password>@<host>:5432/<database_name>
    ```
 3. Install the driver: `pip install psycopg2-binary`
-4. That's it — no model or query code changes needed.
+4. That's it - no model or query code changes needed.
 
 **Why Postgres for production, SQLite for prototype:** SQLite handles one writer
 at a time well, which is fine for a single-developer demo but not for multiple
@@ -111,6 +111,6 @@ developer tier with `openai/gpt-oss-20b`, configured through `AI_API_KEY`,
 blocker rules remain deterministic so governance decisions stay predictable;
 AI is used for natural-language understanding and summaries.
 
-AI never writes directly to project records — `POST /projects/{id}/updates`
+AI never writes directly to project records - `POST /projects/{id}/updates`
 stores a suggestion (`AIUpdateSuggestion`), and a human confirms it via
 `PATCH /projects/updates/{id}/apply` before applying it to the real record.
